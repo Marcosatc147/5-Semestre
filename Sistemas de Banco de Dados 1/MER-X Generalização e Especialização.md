@@ -1,0 +1,37 @@
+# Abstração de Generalização
+- ![[Pasted image 20240402105412.png]]
+- MER-X
+	- tipos podem ser especializados em subtipos
+		- entidades podem ser especializados em subtipos de entidades relevantes no domínio do problema
+			- Abstração de Generalização/Especialização
+- ![[Pasted image 20240402105915.png]]
+	- **Generalização:** elementos de um conjunto são distribuídos em diversos subconjuntos (subtipos)
+		- relacionamento Is-a
+# Herança
+- a chave dos CEs específicos é herdada do CE genérico
+	- chave definida implicitamente
+- CEs específicos herdam todos os atributos do CE genérico
+- ![[Pasted image 20240402110518.png]]
+- Herança múltipla
+	- um mesmo CE participa como CE específico em mais de uma ocorrência da abstração de generalização
+	- atributos e relacionamentos herdados de um mesmo CE genérico por caminhos diferentes na hierarquia são associados (implicitamente) apenas uma vez ao CE específico
+- Quando Especializar?
+	- Caso 1: determinados atributos aplicam-se somente a alguns CEs específicos
+	- Caso 2: existem relacionamentos do quais participam apenas entidades de alguns CEs específicos
+- Múltiplas Especializações
+	- um mesmo CE participa como CE genérico em mais de uma ocorrência de abstração de especialização
+	- ![[Pasted image 20240402112643.png]]
+# Restrições da Abstração de Generalização
+- Restrição de Disjunção
+	- ![[Pasted image 20240402130831.png]]
+		- Abstração de generalização é mutuamente exclusiva (disjoint) se, para qualquer par de CEEs j e k distintos, vale:
+		- ![[Pasted image 20240402130424.png]]
+	- ![[Pasted image 20240402130917.png]]
+		- Abstração de Generalização é definida com **sobreposição** (overlap) se para algum par de CEEs j e k distintos:
+		- ![[Pasted image 20240402131213.png]]
+- Restrição de Totalidade
+	- ![[Pasted image 20240402131306.png]]
+		- Abstração de generalização é total quando todas as entidades genéricas estão em pelo menos um dos CEEs:
+		- ![[Pasted image 20240402131457.png]]
+	- ![[Pasted image 20240402131527.png]]
+		- Abstração de Generalização é Parcial quando existem entidades genéricas que não estão em nenhum CEE:
