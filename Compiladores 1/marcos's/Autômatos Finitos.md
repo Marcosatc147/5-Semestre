@@ -21,3 +21,14 @@ O propósito de um estado é lembrar coisas importantes.
 - **δ**: Q x Σ -> Q é uma **função de transição**
 - q0 pertence a Q é o **estado inicial**
 - F subconjunto de Q é o conjunto de **estados finais**
+![[Pasted image 20240410152339.png]]
+*M tem 3 estados, com alfabeto 0,1, função de transição na tabela, estado inicial = q1 e o conjunto de estados finais é único, contendo apenas q3*
+
+#### O que significa AFD
+-> Autômato -> máquina automática
+-> Finito -> Com memória limitada (estados)
+-> Determinístico -> para cada símbolo do alfabeto  existe exatamente um estado para onde o qual o autômato pode transitar a partir do único estado ativo.
+
+![[Pasted image 20240410153053.png]]
+
+
