@@ -1,0 +1,1 @@
+(^b(bb)*c?$)|(^r(rr|b)*$)|(^b(bb)*c(rr|b)*$)|(^(rr)b(bb)*cb*(rr)*$)(^b(bb)*c?$)|(^r(rr|b)*$)|(^b(bb)*c(rr|b)*$)|(^(rr)b(bb)*c?$)|(^(rr)b(bb)*cb*(rr)*$)|(^(bb)r(rr)*b*$)|(^bb(rr)*b(bb)*$)|(^(rr)+b(bb)*$)|(^r(rr)*b*r(rr)*b(bb)*c?$)|^(rr)*(bb)*r(rr)*$
