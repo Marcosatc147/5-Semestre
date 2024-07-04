@@ -1,0 +1,39 @@
+INPP ; program
+AMEM 2 ; var x,y : int
+DSVS R00
+R01: ENPR 1 ; procedure p
+AMEM 1 ; var z : int
+CRVL 0, 0 
+ARMZ 1, 0 ; z=x
+CRVL 0, 0
+CRCT 1
+SUBT
+ARMZ 0, 0 ; x=x-1
+CRVL 1, 0
+CRCT 1
+
+CMMA ; if z>1
+DSVF R02 ; then 
+CHPR R01, 1 ; p
+DSVS R03
+
+R02: NADA ; else
+CRCT 1
+ARMZ 0, 1 ; y=1
+
+R03: NADA
+CRVL 0, 1
+CRVL 1, 0
+MULT
+ARMZ 0, 1 ; y=y*z
+DMEM 1
+RTPR 1, 0 ; end
+
+R00: NADA ; begin
+LEIT  
+ARMZ 0, 0 ; read(x)
+CHPR R01, 0 ; chamada procedimento p
+CRVL 0, 1
+IMPR ; write(y)
+DMEM 2
+PARA
