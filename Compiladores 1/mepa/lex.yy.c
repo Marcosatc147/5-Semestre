@@ -513,8 +513,18 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
+<<<<<<< HEAD
+<<<<<<< HEAD
+#line 1 "compiladorComProcedures.l"
+#line 2 "compiladorComProcedures.l"
+=======
 #line 1 "compiladorTeste.l"
 #line 2 "compiladorTeste.l"
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+#line 1 "compiladorTeste.l"
+#line 2 "compiladorTeste.l"
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -584,7 +594,14 @@ int checkVar(const char *name, int *index) {
             return 1;
         }
         current = current->next;
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
         //(*index)++;
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+        //(*index)++;
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
     }
     return 0;
 }
@@ -627,14 +644,28 @@ char* generateLabel() {
     sprintf(label, "L%d", labelCount++);
     return label;
 }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
 void emitLabel(const char* label) {
     char buffer[256];
     sprintf(buffer, "%s: NADA", label);
     emit(buffer);
 }
 //parser 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
 void program() {
     emit("INPP");
     match_keyword("program");
@@ -649,7 +680,14 @@ void program() {
     match_delimiter(".");
     emit("PARA");
 }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
 void block() {
     if (lookahead == KEYWORD && strcmp(yylval.str, "label") == 0) {
         label_declaration();
@@ -657,7 +695,15 @@ void block() {
     if (lookahead == KEYWORD && strcmp(yylval.str, "var") == 0) {
         variable_declaration();
     }
+<<<<<<< HEAD
+<<<<<<< HEAD
+    if (lookahead == KEYWORD &&
+=======
     if (lookahead == KEYWORD && 
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+    if (lookahead == KEYWORD && 
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
         (strcmp(yylval.str, "procedure") == 0 || strcmp(yylval.str, "function") == 0)) {
         subroutine_declaration();
     }
@@ -671,7 +717,17 @@ void label_declaration() {
     if (lookahead == NUMBER) {
         strcpy(label, yylval.str); // Copia o número do rótulo para a variável
         match(NUMBER);
+<<<<<<< HEAD
+<<<<<<< HEAD
+        char buffer[256];
+        snprintf(buffer, sizeof(buffer) ,"ENRT %.250s", label);
+        emit(buffer); // Emite a instrução de rótulo para MEPA
+=======
         //mepa_emit_label(label);    // Emite a instrução de rótulo para MEPA
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+        //mepa_emit_label(label);    // Emite a instrução de rótulo para MEPA
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
     }
 
     while (lookahead == DELIMITER && strcmp(yylval.str, ",") == 0) {
@@ -680,12 +736,29 @@ void label_declaration() {
         if (lookahead == NUMBER) {
             strcpy(label, yylval.str); // Copia o número do rótulo para a variável
             match(NUMBER);
+<<<<<<< HEAD
+<<<<<<< HEAD
+            char buffer[256];
+            snprintf(buffer, sizeof(buffer) ,"ENRT %.250s", label);
+            emit(buffer); // Emite a instrução de rótulo para MEPA
+=======
             //mepa_emit_label(label);    // Emite a instrução de rótulo para MEPA
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+            //mepa_emit_label(label);    // Emite a instrução de rótulo para MEPA
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
         }
     }
     
     match_delimiter(";");
 }
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+=======
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
 void variable_declaration() {
     match_keyword("var");
 
@@ -723,9 +796,18 @@ void variable_declaration() {
         } while (lookahead == IDENTIFIER);
     }
 }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 
 
 
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+
+
+
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
 void parameters_() {
     if (lookahead == KEYWORD && strcmp(yylval.str, "var") == 0) {
         match_keyword("var");
@@ -755,7 +837,16 @@ void subroutine_declaration() {
           (strcmp(yylval.str, "procedure") == 0 || strcmp(yylval.str, "function") == 0)) {
         if (strcmp(yylval.str, "procedure") == 0) {
             match_keyword("procedure");
+<<<<<<< HEAD
+<<<<<<< HEAD
+            char* procLabel = generateLabel();
+            emitLabel(procLabel);  // Emitir rótulo para o procedimento
+=======
             insertVar(yylval.str);
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+            insertVar(yylval.str);
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
             match(IDENTIFIER);
             if (lookahead == DELIMITER && strcmp(yylval.str, "(") == 0) {
                 match_delimiter("(");
@@ -763,11 +854,28 @@ void subroutine_declaration() {
                 match_delimiter(")");
             }
             match_delimiter(";");
+<<<<<<< HEAD
+<<<<<<< HEAD
+            emit("ENPR");  // Entrar no procedimento
+            block();
+            emit("RTPR");  // Retornar do procedimento
+            match_delimiter(";");
+        } else if (strcmp(yylval.str, "function") == 0) {
+            match_keyword("function");
+            char* funcLabel = generateLabel();
+            emitLabel(funcLabel);  // Emitir rótulo para a função
+=======
+=======
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
             block();
             match_delimiter(";");
         } else if (strcmp(yylval.str, "function") == 0) {
             match_keyword("function");
             insertVar(yylval.str);
+<<<<<<< HEAD
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
             match(IDENTIFIER);
             if (lookahead == DELIMITER && strcmp(yylval.str, "(") == 0) {
                 match_delimiter("(");
@@ -777,11 +885,28 @@ void subroutine_declaration() {
             match_delimiter(":");
             match_keyword("integer");
             match_delimiter(";");
+<<<<<<< HEAD
+<<<<<<< HEAD
+            emit("ENPR");  // Entrar na função
             block();
+            emit("RTPR");  // Retornar da função
+=======
+            block();
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+            block();
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
             match_delimiter(";");
         }
     }
 }
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+=======
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
 void compound_statement() {
     match_keyword("begin");
     statement_list();
@@ -843,8 +968,20 @@ void assignment() {
     sprintf(buffer, "ARMZ 0, %d", index);
     emit(buffer);
 }
+<<<<<<< HEAD
+<<<<<<< HEAD
+void procedure_call() {
+    char subroutineName[256];
+    strcpy(subroutineName, yylval.str);
+    match(IDENTIFIER);
+=======
 
 void procedure_call() {
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+
+void procedure_call() {
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
     if (lookahead == DELIMITER && strcmp(yylval.str, "(") == 0) {
         match_delimiter("(");
         expression();
@@ -854,6 +991,24 @@ void procedure_call() {
         }
         match_delimiter(")");
     }
+<<<<<<< HEAD
+<<<<<<< HEAD
+    char buffer[256];
+    snprintf(buffer, sizeof(buffer), "CHPR %s.250", subroutineName);
+    emit(buffer); // Emite a instrução MEPA para chamada de procedimento
+}
+
+void goto_statement() {
+    match_keyword("goto");
+    char buffer[256];
+    sprintf(buffer, "DSVS %s", yylval.str);
+    emit(buffer);
+    match(NUMBER);
+}
+
+=======
+=======
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
     emit("CHPR"); // Emite a instrução MEPA para chamada de procedimento
 }
 void goto_statement() {
@@ -864,6 +1019,10 @@ void goto_statement() {
         match(NUMBER);
     }
 }
+<<<<<<< HEAD
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
 void conditional_statement() {
     match_keyword("if");
     expression();
@@ -872,6 +1031,21 @@ void conditional_statement() {
     char buffer[256];
     
     sprintf(buffer, "DSVF %s", labelElse);
+<<<<<<< HEAD
+<<<<<<< HEAD
+    emit(buffer); // Desvio se falso para o label else
+    
+    match_keyword("then");
+    statement();
+
+    sprintf(buffer, "DSVS %s", labelEnd);
+    emit(buffer); // Desvio incondicional para o label end
+    
+    emitLabel(labelElse); // Label else
+    
+=======
+=======
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
     emit(buffer); // Emite a instrução MEPA para desvio se falso para o label else
     match_keyword("then");
     statement();
@@ -879,17 +1053,49 @@ void conditional_statement() {
     emit(buffer); // Emite a instrução MEPA para desvio incondicional para o label end
     
     emitLabel(labelElse); // Emite o label else
+<<<<<<< HEAD
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
     if (lookahead == KEYWORD && strcmp(yylval.str, "else") == 0) {
         match_keyword("else");
         statement();
     }
+<<<<<<< HEAD
+<<<<<<< HEAD
+    
+    emitLabel(labelEnd); // Label end
+=======
     emitLabel(labelEnd); // Emite o label end
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+    emitLabel(labelEnd); // Emite o label end
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
 
     free(labelElse);
     free(labelEnd);
 }
 
 void repetitive_statement() {
+<<<<<<< HEAD
+<<<<<<< HEAD
+    match_keyword("while");
+    char *labelBegin = generateLabel();
+    emitLabel(labelBegin);
+    expression();
+    char *labelEnd = generateLabel();
+    char buffer[256];
+    sprintf(buffer, "DSVF %s", labelEnd);
+    emit(buffer);
+    match_keyword("do");
+    statement();
+    sprintf(buffer, "DSVS %s", labelBegin);
+    emit(buffer);
+    emitLabel(labelEnd);
+    free(labelBegin);
+=======
+=======
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
     char* labelStart = generateLabel();
     char* labelEnd = generateLabel();
 
@@ -907,6 +1113,10 @@ void repetitive_statement() {
     emitLabel(labelEnd); // Emite o label end
 
     free(labelStart);
+<<<<<<< HEAD
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
     free(labelEnd);
 }
 void read_statement() {
@@ -948,7 +1158,14 @@ void write_statement() {
     }
     match_delimiter(")");      // Reconhece o delimitador de fechamento ")"
 }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
 void expression() {
     simple_expression();
     if (lookahead == OPERATOR || lookahead == COMPOUND_OPERATOR) {
@@ -979,7 +1196,14 @@ void expression() {
         }
     }
 }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
 void simple_expression() {
     term();
     while ((lookahead == OPERATOR && 
@@ -1001,7 +1225,14 @@ void simple_expression() {
         }
     }
 }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
 void term() {
     factor();
     while ((lookahead == OPERATOR && 
@@ -1021,7 +1252,14 @@ void term() {
         }
     }
 }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
 void factor() {
     if (lookahead == IDENTIFIER) {
         int varIndex;
@@ -1049,7 +1287,14 @@ void factor() {
         error_count++;
     }
 }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
 int yyparse() {
     lookahead = yylex(); // Pega o primeiro token
     program(); // Começa a análise sintática
@@ -1058,9 +1303,21 @@ int yyparse() {
     }
     return 0;
 }
+<<<<<<< HEAD
+<<<<<<< HEAD
+#line 1068 "lex.yy.c"
+/* Regras para os tokens */
+#line 1070 "lex.yy.c"
+=======
 #line 1062 "lex.yy.c"
 /* Regras para os tokens */
 #line 1064 "lex.yy.c"
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+#line 1062 "lex.yy.c"
+/* Regras para os tokens */
+#line 1064 "lex.yy.c"
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
 
 #define INITIAL 0
 
@@ -1277,9 +1534,21 @@ YY_DECL
 		}
 
 	{
+<<<<<<< HEAD
+<<<<<<< HEAD
+#line 590 "compiladorComProcedures.l"
+
+#line 1289 "lex.yy.c"
+=======
 #line 584 "compiladorTeste.l"
 
 #line 1283 "lex.yy.c"
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+#line 584 "compiladorTeste.l"
+
+#line 1283 "lex.yy.c"
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -1338,7 +1607,15 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
+<<<<<<< HEAD
+<<<<<<< HEAD
+#line 591 "compiladorComProcedures.l"
+=======
 #line 585 "compiladorTeste.l"
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+#line 585 "compiladorTeste.l"
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
 {
     yylval.str = strdup(yytext);
     return KEYWORD;
@@ -1346,52 +1623,129 @@ YY_RULE_SETUP
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
+<<<<<<< HEAD
+<<<<<<< HEAD
+#line 595 "compiladorComProcedures.l"
+=======
 #line 589 "compiladorTeste.l"
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+#line 589 "compiladorTeste.l"
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
 { yylval.str = strdup(yytext); return IDENTIFIER; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
+<<<<<<< HEAD
+<<<<<<< HEAD
+#line 596 "compiladorComProcedures.l"
+=======
 #line 590 "compiladorTeste.l"
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+#line 590 "compiladorTeste.l"
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
 { yylval.num = atoi(yytext); return NUMBER; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
+<<<<<<< HEAD
+<<<<<<< HEAD
+#line 597 "compiladorComProcedures.l"
+=======
 #line 591 "compiladorTeste.l"
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+#line 591 "compiladorTeste.l"
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
 { yylval.str = strdup(yytext); return OPERATOR; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
+<<<<<<< HEAD
+<<<<<<< HEAD
+#line 598 "compiladorComProcedures.l"
+=======
 #line 592 "compiladorTeste.l"
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+#line 592 "compiladorTeste.l"
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
 { yylval.str = strdup(yytext); return COMPOUND_OPERATOR; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
+<<<<<<< HEAD
+<<<<<<< HEAD
+#line 599 "compiladorComProcedures.l"
+=======
 #line 593 "compiladorTeste.l"
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+#line 593 "compiladorTeste.l"
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
 { yylval.str = strdup(yytext); return DELIMITER; }
 	YY_BREAK
 case 7:
 /* rule 7 can match eol */
 YY_RULE_SETUP
+<<<<<<< HEAD
+<<<<<<< HEAD
+#line 600 "compiladorComProcedures.l"
+=======
 #line 594 "compiladorTeste.l"
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+#line 594 "compiladorTeste.l"
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
 { /* Ignora comentários */ }
 	YY_BREAK
 case 8:
 /* rule 8 can match eol */
 YY_RULE_SETUP
+<<<<<<< HEAD
+<<<<<<< HEAD
+#line 601 "compiladorComProcedures.l"
+=======
 #line 595 "compiladorTeste.l"
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+#line 595 "compiladorTeste.l"
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
 { /* Ignora espaços, tabs e quebras de linhas */ }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
+<<<<<<< HEAD
+<<<<<<< HEAD
+#line 602 "compiladorComProcedures.l"
+=======
 #line 596 "compiladorTeste.l"
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+#line 596 "compiladorTeste.l"
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
 { error_count++; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
+<<<<<<< HEAD
+<<<<<<< HEAD
+#line 604 "compiladorComProcedures.l"
+ECHO;
+	YY_BREAK
+#line 1401 "lex.yy.c"
+=======
+=======
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
 #line 598 "compiladorTeste.l"
 ECHO;
 	YY_BREAK
 #line 1395 "lex.yy.c"
+<<<<<<< HEAD
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -2396,7 +2750,15 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+#line 604 "compiladorComProcedures.l"
+=======
 #line 598 "compiladorTeste.l"
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+#line 598 "compiladorTeste.l"
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
 
 
 int main(int argc, char *argv[]) {
@@ -2417,12 +2779,21 @@ int main(int argc, char *argv[]) {
     fclose(input);
     freeVarTable(); // Libera a memória da tabela de variáveis
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
     /* if (error_count == 0) {
         printf("Aceito\n");
     } else {
         printf("Rejeito\n");
     } */
  
+<<<<<<< HEAD
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
+=======
+>>>>>>> 7996b7b070b35781d926ded410e9accca582f42a
     return result;
 }
 
