@@ -1,0 +1,342 @@
+{
+  "actors": [
+    {
+      "id": "755ede2a-ec22-4e2b-b07c-f5020fc0ab78",
+      "text": "Mooviter",
+      "type": "istar.Role",
+      "x": 119,
+      "y": 251,
+      "customProperties": {
+        "Description": ""
+      },
+      "nodes": [
+        {
+          "id": "f0bb33a4-520b-426a-942b-55114e4147bd",
+          "text": "Contribuição para o moovit",
+          "type": "istar.Goal",
+          "x": 216,
+          "y": 294,
+          "customProperties": {
+            "Description": ""
+          }
+        },
+        {
+          "id": "7593c43a-9bce-45b1-a2b5-1eb968099120",
+          "text": "Cadastrar-se como mooviter",
+          "type": "istar.Task",
+          "x": 119,
+          "y": 364,
+          "customProperties": {
+            "Description": ""
+          }
+        },
+        {
+          "id": "aca4c9ea-7312-4c56-b784-94e78981a2ae",
+          "text": "Preencher informações em formulário",
+          "type": "istar.Task",
+          "x": 221,
+          "y": 377,
+          "customProperties": {
+            "Description": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "2dccdce8-1328-4b0f-bc88-c2a446ac6d75",
+      "text": "Usuário",
+      "type": "istar.Role",
+      "x": 291,
+      "y": 41,
+      "customProperties": {
+        "Description": ""
+      },
+      "nodes": []
+    },
+    {
+      "id": "48406040-e4e7-4399-a9b0-9c8f6a00206c",
+      "text": "Moovit",
+      "type": "istar.Agent",
+      "x": 649,
+      "y": 190,
+      "customProperties": {
+        "Description": ""
+      },
+      "nodes": [
+        {
+          "id": "b6ed6fb4-7daf-4f47-acd9-8a4ad0f92023",
+          "text": "Informações atualizadas",
+          "type": "istar.Goal",
+          "x": 799,
+          "y": 372,
+          "customProperties": {
+            "Description": ""
+          }
+        },
+        {
+          "id": "efa8f8ad-9d87-4fb1-bbdd-3a90d194c39a",
+          "text": "Tempo real",
+          "type": "istar.Quality",
+          "x": 940,
+          "y": 231,
+          "customProperties": {
+            "Description": ""
+          }
+        },
+        {
+          "id": "405d1949-2ce0-4ebc-bae2-2f9e86595a18",
+          "text": "Atraso",
+          "type": "istar.Quality",
+          "x": 833,
+          "y": 214,
+          "customProperties": {
+            "Description": ""
+          }
+        },
+        {
+          "id": "979196f0-b609-4f4b-9284-dd8400a60ecb",
+          "text": "Informação falsa",
+          "type": "istar.Quality",
+          "x": 731,
+          "y": 238,
+          "customProperties": {
+            "Description": ""
+          }
+        },
+        {
+          "id": "b97b3a56-3a68-435f-86a8-dc2dead32350",
+          "text": "Governo",
+          "type": "istar.Resource",
+          "x": 1074,
+          "y": 335,
+          "customProperties": {
+            "Description": ""
+          }
+        },
+        {
+          "id": "1a6ad66d-5e83-4227-a767-9db287ae399b",
+          "text": "Empresas de ônibus",
+          "type": "istar.Resource",
+          "x": 1084,
+          "y": 426,
+          "customProperties": {
+            "Description": ""
+          }
+        },
+        {
+          "id": "6d69883b-c678-4b6b-8e1a-4a63545dc1b9",
+          "text": "Apresentar informações",
+          "type": "istar.Task",
+          "x": 942,
+          "y": 380,
+          "customProperties": {
+            "Description": ""
+          }
+        }
+      ]
+    }
+  ],
+  "orphans": [],
+  "dependencies": [
+    {
+      "id": "6b9ca7fb-789c-4abd-afba-7273d535b5b5",
+      "text": "Atualizar informações sobre rotas de ônibus",
+      "type": "istar.Task",
+      "x": 454,
+      "y": 288,
+      "customProperties": {
+        "Description": ""
+      },
+      "source": "b6ed6fb4-7daf-4f47-acd9-8a4ad0f92023",
+      "target": "f0bb33a4-520b-426a-942b-55114e4147bd"
+    },
+    {
+      "id": "508b481e-abc3-4b13-abe3-1de1db1993c1",
+      "text": "Informações atualizadas sobre horários de ônibus",
+      "type": "istar.Task",
+      "x": 459,
+      "y": 359,
+      "customProperties": {
+        "Description": ""
+      },
+      "source": "b6ed6fb4-7daf-4f47-acd9-8a4ad0f92023",
+      "target": "f0bb33a4-520b-426a-942b-55114e4147bd"
+    },
+    {
+      "id": "d5c0f41d-d312-4cad-ba21-35aa615c8f28",
+      "text": "Adicionar/editar ponto de ônibus",
+      "type": "istar.Task",
+      "x": 465,
+      "y": 425,
+      "customProperties": {
+        "Description": ""
+      },
+      "source": "b6ed6fb4-7daf-4f47-acd9-8a4ad0f92023",
+      "target": "f0bb33a4-520b-426a-942b-55114e4147bd"
+    },
+    {
+      "id": "1ba24855-d58d-4a49-a185-0e5c62a67951",
+      "text": "Reportar informações relevantes",
+      "type": "istar.Task",
+      "x": 464,
+      "y": 485,
+      "customProperties": {
+        "Description": ""
+      },
+      "source": "b6ed6fb4-7daf-4f47-acd9-8a4ad0f92023",
+      "target": "f0bb33a4-520b-426a-942b-55114e4147bd"
+    }
+  ],
+  "links": [
+    {
+      "id": "c9853469-a9bf-4446-bdf6-ec2e76ef3b6b",
+      "type": "istar.DependencyLink",
+      "source": "1ba24855-d58d-4a49-a185-0e5c62a67951",
+      "target": "f0bb33a4-520b-426a-942b-55114e4147bd"
+    },
+    {
+      "id": "32e7dc16-4e74-4ec2-9106-c661fc509a45",
+      "type": "istar.DependencyLink",
+      "source": "b6ed6fb4-7daf-4f47-acd9-8a4ad0f92023",
+      "target": "1ba24855-d58d-4a49-a185-0e5c62a67951"
+    },
+    {
+      "id": "a346f145-f8d4-4432-a6ec-364a171cbe4a",
+      "type": "istar.DependencyLink",
+      "source": "d5c0f41d-d312-4cad-ba21-35aa615c8f28",
+      "target": "f0bb33a4-520b-426a-942b-55114e4147bd"
+    },
+    {
+      "id": "0cb4e404-c4d0-4a41-8706-6bbb133cff93",
+      "type": "istar.DependencyLink",
+      "source": "b6ed6fb4-7daf-4f47-acd9-8a4ad0f92023",
+      "target": "d5c0f41d-d312-4cad-ba21-35aa615c8f28"
+    },
+    {
+      "id": "ce494e9f-abfa-4b10-983f-8fac73f64be4",
+      "type": "istar.DependencyLink",
+      "source": "508b481e-abc3-4b13-abe3-1de1db1993c1",
+      "target": "f0bb33a4-520b-426a-942b-55114e4147bd"
+    },
+    {
+      "id": "1439eac0-7df6-483f-abd8-efab3d562a1c",
+      "type": "istar.DependencyLink",
+      "source": "b6ed6fb4-7daf-4f47-acd9-8a4ad0f92023",
+      "target": "508b481e-abc3-4b13-abe3-1de1db1993c1"
+    },
+    {
+      "id": "69ce8eb9-0431-455e-8c76-08e1aea0cd60",
+      "type": "istar.DependencyLink",
+      "source": "6b9ca7fb-789c-4abd-afba-7273d535b5b5",
+      "target": "f0bb33a4-520b-426a-942b-55114e4147bd"
+    },
+    {
+      "id": "ede5edba-5b22-4ad5-9e23-49687dca583a",
+      "type": "istar.DependencyLink",
+      "source": "b6ed6fb4-7daf-4f47-acd9-8a4ad0f92023",
+      "target": "6b9ca7fb-789c-4abd-afba-7273d535b5b5"
+    },
+    {
+      "id": "f8d66b13-0987-4514-9dde-ef1503f16038",
+      "type": "istar.IsALink",
+      "source": "755ede2a-ec22-4e2b-b07c-f5020fc0ab78",
+      "target": "2dccdce8-1328-4b0f-bc88-c2a446ac6d75"
+    },
+    {
+      "id": "fb50f161-8017-45ad-861b-5b14e3e03195",
+      "type": "istar.AndRefinementLink",
+      "source": "7593c43a-9bce-45b1-a2b5-1eb968099120",
+      "target": "f0bb33a4-520b-426a-942b-55114e4147bd"
+    },
+    {
+      "id": "87fa8629-0389-4f0c-816b-01b0ee8b75b6",
+      "type": "istar.AndRefinementLink",
+      "source": "aca4c9ea-7312-4c56-b784-94e78981a2ae",
+      "target": "f0bb33a4-520b-426a-942b-55114e4147bd"
+    },
+    {
+      "id": "9244129c-a107-4f3e-91a2-f3e49e90e4fb",
+      "type": "istar.NeededByLink",
+      "source": "b97b3a56-3a68-435f-86a8-dc2dead32350",
+      "target": "6d69883b-c678-4b6b-8e1a-4a63545dc1b9"
+    },
+    {
+      "id": "e2219e9d-2d61-4500-be2f-dddbee0b1cab",
+      "type": "istar.NeededByLink",
+      "source": "1a6ad66d-5e83-4227-a767-9db287ae399b",
+      "target": "6d69883b-c678-4b6b-8e1a-4a63545dc1b9"
+    },
+    {
+      "id": "dd136dcd-f91d-4433-886d-f7820e90c352",
+      "type": "istar.AndRefinementLink",
+      "source": "b6ed6fb4-7daf-4f47-acd9-8a4ad0f92023",
+      "target": "6d69883b-c678-4b6b-8e1a-4a63545dc1b9"
+    },
+    {
+      "id": "74f1ce79-55b5-471f-9c4f-240c00bbd369",
+      "type": "istar.ContributionLink",
+      "source": "b6ed6fb4-7daf-4f47-acd9-8a4ad0f92023",
+      "target": "efa8f8ad-9d87-4fb1-bbdd-3a90d194c39a",
+      "label": "make"
+    },
+    {
+      "id": "6e67b2be-7881-435a-8552-32f07060c8e5",
+      "type": "istar.ContributionLink",
+      "source": "b6ed6fb4-7daf-4f47-acd9-8a4ad0f92023",
+      "target": "979196f0-b609-4f4b-9284-dd8400a60ecb",
+      "label": "break"
+    },
+    {
+      "id": "0d843899-812c-4445-95d7-99a7e5b87564",
+      "type": "istar.ContributionLink",
+      "source": "b6ed6fb4-7daf-4f47-acd9-8a4ad0f92023",
+      "target": "405d1949-2ce0-4ebc-bae2-2f9e86595a18",
+      "label": "hurt"
+    }
+  ],
+  "display": {
+    "aca4c9ea-7312-4c56-b784-94e78981a2ae": {
+      "width": 104.609375,
+      "height": 45.546875
+    },
+    "b6ed6fb4-7daf-4f47-acd9-8a4ad0f92023": {
+      "width": 103.609375,
+      "height": 45.046875
+    },
+    "6b9ca7fb-789c-4abd-afba-7273d535b5b5": {
+      "width": 116.109375,
+      "height": 54.046875
+    },
+    "508b481e-abc3-4b13-abe3-1de1db1993c1": {
+      "width": 108.609375,
+      "height": 49.646881103515625
+    },
+    "74f1ce79-55b5-471f-9c4f-240c00bbd369": {
+      "vertices": [
+        {
+          "x": 935,
+          "y": 333
+        }
+      ]
+    },
+    "6e67b2be-7881-435a-8552-32f07060c8e5": {
+      "vertices": [
+        {
+          "x": 779,
+          "y": 340
+        }
+      ]
+    }
+  },
+  "tool": "pistar.2.1.0",
+  "istar": "2.0",
+  "saveDate": "Thu, 05 Sep 2024 17:04:29 GMT",
+  "diagram": {
+    "width": 1210,
+    "height": 700,
+    "name": "Welcome Model",
+    "customProperties": {
+      "Description": "Welcome to the piStar tool version 2.1.0, released on November, 2021! This model describes some of the recent improvements in the tool. Click on the purple elements for further info.\n\nFor help using this tool, please check the Help menu above"
+    }
+  }
+}
